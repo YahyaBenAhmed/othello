@@ -10,16 +10,7 @@ DIRECTIONS = [(-1, -1), (-1, 0), (-1, 1),
 
 # Fonction pour créer et initialiser le plateau de jeu
 def initialiser_plateau():
-    """
-    Crée un plateau de jeu vide et place les 4 pions initiaux au centre.
-    Les positions initiales dans Othello sont toujours:
-    - 'O' aux positions (3,3) et (4,4)
-    - 'X' aux positions (3,4) et (4,3)
-    Ce qui forme une disposition en diagonale au centre du plateau.
-
-    Retourne:
-        Un plateau 8x8 initialisé avec la configuration de départ d'Othello
-    """
+   
     plateau = [[' ' for _ in range(TAILLE)] for _ in range(TAILLE)]
     plateau[3][3], plateau[4][4] = 'O', 'O'
     plateau[3][4], plateau[4][3] = 'X', 'X'
@@ -28,17 +19,7 @@ def initialiser_plateau():
 
 # Retourne la liste des coups valides pour un joueur donné
 def coups_valides(plateau, joueur):
-    """
-    Détermine tous les coups légaux pour un joueur sur le plateau actuel.
-    Un coup est valide s'il permet de capturer au moins un pion adverse.
-
-    Args:
-        plateau: État actuel du plateau de jeu
-        joueur: Symbole du joueur ('X' ou 'O')
-
-    Retourne:
-        Une liste de tuples (x, y) représentant les positions valides pour jouer
-    """
+  
     adversaire = 'O' if joueur == 'X' else 'X'
     valides = []
     for x in range(TAILLE):
